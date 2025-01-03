@@ -5,6 +5,7 @@ import { SessionsRoutingModule } from './sessions-routing.module';
 import { ListeSessionsComponent } from './liste-sessions/liste-sessions.component';
 import { AddSessionComponent } from './add-session/add-session.component';
 import { EditSessionComponent } from './edit-session/edit-session.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { EditSessionComponent } from './edit-session/edit-session.component';
   ],
   imports: [
     CommonModule,
-    SessionsRoutingModule
+    SessionsRoutingModule,
+    FormsModule
   ]
 })
 export class SessionsModule { }

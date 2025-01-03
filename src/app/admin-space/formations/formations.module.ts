@@ -5,6 +5,7 @@ import { FormationsRoutingModule } from './formations-routing.module';
 import { ListeFormationsComponent } from './liste-formations/liste-formations.component';
 import { AddFormationComponent } from './add-formation/add-formation.component';
 import { EditFormationComponent } from './edit-formation/edit-formation.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { EditFormationComponent } from './edit-formation/edit-formation.componen
   ],
   imports: [
     CommonModule,
-    FormationsRoutingModule
+    FormationsRoutingModule,
+    FormsModule
   ]
 })
 export class FormationsModule { }
