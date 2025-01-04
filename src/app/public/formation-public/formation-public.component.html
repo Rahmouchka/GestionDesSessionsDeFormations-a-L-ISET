@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<app-rech-formations></app-rech-formations>
+<div class="container mt-4">
+  <h2 class="mb-4">Liste des formations</h2>
+  <ul class="list-group">
+    @for(formation of formations;track $index){
+    <li class="list-group-item">
+      <h5 class="mb-1">{{ formation.titre }}</h5>
+      <p class="mb-1">{{ formation.description }}</p>
+      <small class="text-muted"
+        >Charge Horaire: {{ formation.chargeHoraire }} heures</small
+      >
+      <br />
+      <small class="text-muted"
+        >Niveau de Difficulté: {{ formation.niveauDifficulte }}</small
+      >
+      <a [routerLink]="['formation-details', formation.id]" class="btn btn-link"
+        >Voir les détails</a
+      >
+    </li>
+    }
+  </ul>
+</div>

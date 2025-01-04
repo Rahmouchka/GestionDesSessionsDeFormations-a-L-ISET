@@ -45,4 +45,9 @@ export class FormationService {
     this.formations = this.formations.filter(f => f.id !== id);
     this.formationsEdited.next([...this.formations]);
   }
+  searchFormations(searchTerm: string) {
+    return this.formations.filter((f) =>
+      f.titre.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
 }

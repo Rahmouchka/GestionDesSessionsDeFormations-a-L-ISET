@@ -1,1 +1,28 @@
-<p>rech-formations works!</p>
+<div class="container mt-4">
+  <h2 class="mb-4">Rechercher une formation</h2>
+  <form (submit)="searchFormations()">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="searchTerm"
+        name="searchTerm"
+        placeholder="Entrez des mots clés"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Rechercher</button>
+  </form>
+  @if (formations.length>0) {
+  <ul class="list-group mt-4">
+    @for( formation of formations;track $index){
+    <li class="list-group-item">
+      <h5 class="mb-1">{{ formation.titre }}</h5>
+      <p class="mb-1">{{ formation.description }}</p>
+      <a [routerLink]="['formation-details', formation.id]" class="btn btn-link"
+        >Voir les détails</a
+      >
+    </li>
+    }
+  </ul>
+  }
+</div>
