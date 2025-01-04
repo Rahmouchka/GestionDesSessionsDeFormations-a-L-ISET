@@ -33,7 +33,10 @@ export class FormationService {
     );
     this.formations = [...this.formations, newFormation];
   }
-
+  getFormationById(id: number): Formation | undefined {
+    return this.formations.find(formation => formation.id === id);
+  }
+  
   editFormation(formation: Formation) {
     this.formations = this.formations.map(f => f.id === formation.id ? formation : f);
   }

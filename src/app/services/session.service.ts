@@ -32,6 +32,10 @@ export class SessionService {
     );
     this.sessions = [...this.sessions, newSession];
   }
+    
+  getSessionById(id: number): Session | undefined {
+    return this.sessions.find(session => session.id === id);
+  }
 
   editSession(session: Session) {
     this.sessions= this.sessions.map(s => s.id === session.id ? session : s);

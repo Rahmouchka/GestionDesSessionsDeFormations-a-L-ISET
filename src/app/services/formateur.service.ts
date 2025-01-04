@@ -34,6 +34,10 @@ export class FormateurService {
     this.formateurs = [...this.formateurs, newFormateur];
   }
   
+  getFormateurById(id: number): Formateur | undefined {
+    return this.formateurs.find(formateur => formateur.id === id);
+  }
+  
   editFormateur(formateur: Formateur) {
     this.formateurs = this.formateurs.map(f => f.id === formateur.id ? formateur : f);
   }

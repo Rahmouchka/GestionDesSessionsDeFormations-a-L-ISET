@@ -23,7 +23,7 @@
             <td>{{ candidat.prenom }}</td>
             <td>{{ candidat.email }}</td>
             <td>{{ candidat.numeroCarteIdentite }}</td>
-            <td><img [src]="candidat.photo" alt="photo" width="50"></td>
+            <td><img [src]="candidat.photo" alt="photo de {{candidat.nom}}" width="50"></td>
             <td>{{ candidat.motDePasse }}</td>
             <td><a class="btn btn-success" [routerLink]="['/admin-space','candidats', 'edit', candidat.id]">Editer</a></td>
             <td><button class="btn btn-danger" (click)="deleteCandidat(candidat.id)">Supprimer</button></td>

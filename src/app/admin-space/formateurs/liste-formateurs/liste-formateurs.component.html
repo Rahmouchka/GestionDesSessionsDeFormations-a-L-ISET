@@ -26,12 +26,14 @@
             <td>{{ formateur.email }}</td>
             <td>{{ formateur.telephone }}</td>
             <td>{{ formateur.numeroCarteIdentite }}</td>
-            <td><img [src]="formateur.photo" alt="photo" width="50"></td>
-            <td>{{formateur.cv}}</td>
+            <td><img [src]="formateur.photo" alt="photo de {{formateur.nom}}" width="50"></td>
+            <td><a [href]="formateur.cv" target="_blank">Voir CV</a></td>
             <td>
-            @for(s of formateur.specialites;track $index){
-                {{ s }}<br>
-            }
+                <ul>
+                    @for(s of formateur.specialites;track $index){
+                        <li>{{ s }}</li>
+                    }
+                </ul>
             </td>
             <td><a class="btn btn-success" [routerLink]="['/admin-space', 'formateurs', 'edit', formateur.id]">Editer</a></td>
             <td><button class="btn btn-danger" (click)="deleteFormateur(formateur.id)">Supprimer</button></td>

@@ -30,6 +30,10 @@ export class CandidatService {
     );
     this.candidats=[...this.candidats,newCandidat]
   }
+  getCandidatById(id: number): Candidat | undefined {
+    return this.candidats.find(candidat => candidat.id === id);
+  }
+  
   editCandidat(candidat:Candidat){
     this.candidats=this.candidats.map(
       c=>c.id === candidat.id?candidat:c
