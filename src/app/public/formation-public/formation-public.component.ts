@@ -10,7 +10,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 })
 export class FormationPublicComponent implements OnInit {
   formations: Formation[] = [];
-
+  searchTerm: string = '';
   constructor(private formationService: FormationService) {}
 
   ngOnInit(): void {
@@ -20,5 +20,7 @@ export class FormationPublicComponent implements OnInit {
   getFormations(): void {
     this.formations = this.formationService.getFormations();
   }
-  
+  get FiltredFormations(): Formation[] {
+    return this.formationService.searchFormations(this.searchTerm);
+  }
 }
